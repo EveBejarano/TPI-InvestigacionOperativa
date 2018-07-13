@@ -37,7 +37,7 @@ def ecuacion(): # X = X1  Y = X2
 		FOX1 = float(OX1.get()) 
 		FOX2 = float(OX2.get())
 	except:
-		messagebox.showerror("Error", "Ingrese Valores Válidos NO nulos en la función objetivo.")
+		messagebox.showerror("Error", "Ingrese valores válidos NO nulos en la función objetivo.")
 		pass
 
 	# Cantidad de restricciones
@@ -49,7 +49,7 @@ def ecuacion(): # X = X1  Y = X2
 		R1B1 = float(R1X2.get())
 		R1C1 = float(R1C.get())
 	except:
-		messagebox.showerror("Error", "Ingrese Valores Válidos NO nulos en la restriccion 1.")
+		messagebox.showerror("Error", "Ingrese valores válidos NO nulos en la restricción 1.")
 		pass 
 
 	# Sentido de la Restricción 1
@@ -69,7 +69,7 @@ def ecuacion(): # X = X1  Y = X2
 		    
 		    
 		except:
-		    messagebox.showerror("Error", "Ingrese Valores Válidos NO nulos en la restriccion 2.")
+		    messagebox.showerror("Error", "Ingrese valores válidos NO nulos en la restricción 2.")
 		    pass 
 
 	# Sentido de la Restricción 2
@@ -88,7 +88,7 @@ def ecuacion(): # X = X1  Y = X2
 		    R3C3 = float(R3C.get())	
         
 		except:
-		    messagebox.showerror("Error", "Ingrese Valores Válidos NO nulos en la restriccion 3.")
+		    messagebox.showerror("Error", "Ingrese valores válidos NO nulos en la restricción 3.")
 		    pass 
 
 		# Sentido de la Restricción 3	
@@ -146,7 +146,7 @@ def CantResUpdate(event):
 raiz = Tk()
 
 # Define el ancho y el alto
-raiz.geometry('400x250') 
+raiz.geometry('400x325') 
 
 # Define el título de la ventana
 raiz.title('Programacion Lineal - Método Gráfico')
@@ -216,7 +216,7 @@ ttk.Combobox(restriccion2, values = ('>=','<=','='), width = '5', textvariable =
 Entry(restriccion2, width = '5', textvariable = R2C).pack(side = LEFT, padx=(5,0))
 
 # Restriccion 3
-restriccion3 = Frame(raiz, width = '400', height = '100')
+restriccion3 = Frame(raiz, width = '500', height = '100')
 restriccion3.pack(side = TOP)
 Label(restriccion3, text='R3: ').pack(side = LEFT)
 Entry(restriccion3, width = '5',textvariable = R3X1).pack(side = LEFT)
@@ -225,6 +225,23 @@ Entry(restriccion3, width = '5',textvariable = R3X2).pack(side = LEFT)
 Label(restriccion3, text = " X2 ").pack(side = LEFT)
 ttk.Combobox(restriccion3, values = ('>=','<=','='), width = '5', textvariable = R3Signo, state = 'readonly').pack(side = LEFT)
 Entry(restriccion3, width = '5', textvariable = R3C).pack(side = LEFT, padx=(5,0))
+
+nota0 = Frame(raiz, width = '400', height = '100')
+nota0.pack(side = TOP)
+Label(nota0, text = "").pack(side = LEFT)
+
+nota = Frame(raiz, width = '400', height = '100')
+nota.pack(side = TOP)
+Label(nota, text = "Nota:").pack(side = LEFT)
+
+nota2 = Frame(raiz, width = '400', height = '100')
+nota2.pack(side = TOP)
+Label(nota2, text = "- La precisión de los cálculos es de 5 decimales.").pack(side = LEFT)
+
+nota3 = Frame(raiz, width = '400', height = '100')
+nota3.pack(side = TOP)
+Label(nota3, text = "- Los resultados se redondean a 2 decimales.").pack(side = LEFT)
+
 
 # Botón Resolver
 ttk.Button(raiz, text='Resolver', command= ecuacion).pack(side = BOTTOM, pady=(10,10))
